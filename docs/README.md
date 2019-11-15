@@ -1,7 +1,5 @@
 # Hello VuePress
 
-### Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/> <Badge text="default theme"/>
-
 
 ::: tip
 This is a tip
@@ -22,3 +20,10 @@ export default {
   // ...
 }
 ```
+
+@startuml
+Bob -> Alice : hello
+@enduml
+
+
+$\sqrt{3x-1}+(1+x)^2$

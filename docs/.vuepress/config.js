@@ -1,25 +1,32 @@
 module.exports = {
-  title: 'Hello VuePress',
+  title: 'Documentation',
   description: 'Just playing around',
   base: '/Docs/',
+  head: [
+    ['link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css' }],
+	  ['link', {href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel :'stylesheet'}]
+  ],
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    extendMarkdown: md => {
+      md.use(require("markdown-it-katex"))
+      md.use(require("markdown-it-plantuml"))
+    }
   },
   themeConfig: {
     displayAllHeaders: true, // Default: false
-    nav: [{
-      text: 'Home',
-      link: '/'
-    }],
-    sidebar: [{
-      type: 'group',
-      title: '1.1',
-      collapsable: true,
-      children: [
-        ['/', '1.1.1'],
-        ['/guide/', '1.1.2']
-      ]
-    }]
+    sidebar: [
+      ['/', 'Home'],
+      {
+        type: 'group',
+        title: 'Cours',
+        collapsable: true,
+        children: [
+          ['/cours/android/', 'Android'],
+          ['/cours/jee/', 'Java Entreprise Edition']
+        ]
+      }
+    ]
 
   }
 }
