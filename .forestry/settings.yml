@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: docs/.vuepress/config.js
+  label: Settings
+  match: "**/*"
 - type: directory
   path: docs
   label: Docs
